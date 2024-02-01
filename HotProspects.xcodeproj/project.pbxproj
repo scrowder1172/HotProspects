@@ -12,6 +12,8 @@
 		5259D9A32B6BF01600D86798 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5259D9A22B6BF01600D86798 /* Assets.xcassets */; };
 		5259D9A62B6BF01600D86798 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5259D9A52B6BF01600D86798 /* Preview Assets.xcassets */; };
 		5259D9AD2B6BF19D00D86798 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5259D9AC2B6BF19D00D86798 /* Launch Screen.storyboard */; };
+		5259D9B02B6C0B8500D86798 /* MultiSelectListViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5259D9AF2B6C0B8500D86798 /* MultiSelectListViewExample.swift */; };
+		5259D9B22B6C0F8A00D86798 /* SingleSelectListViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5259D9B12B6C0F8A00D86798 /* SingleSelectListViewExample.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +23,8 @@
 		5259D9A22B6BF01600D86798 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5259D9A52B6BF01600D86798 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5259D9AC2B6BF19D00D86798 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		5259D9AF2B6C0B8500D86798 /* MultiSelectListViewExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiSelectListViewExample.swift; sourceTree = "<group>"; };
+		5259D9B12B6C0F8A00D86798 /* SingleSelectListViewExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleSelectListViewExample.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +59,7 @@
 			children = (
 				5259D99E2B6BF01300D86798 /* HotProspectsApp.swift */,
 				5259D9A02B6BF01300D86798 /* ContentView.swift */,
+				5259D9AE2B6C0B6B00D86798 /* TutorialFiles */,
 				5259D9AC2B6BF19D00D86798 /* Launch Screen.storyboard */,
 				5259D9A22B6BF01600D86798 /* Assets.xcassets */,
 				5259D9A42B6BF01600D86798 /* Preview Content */,
@@ -68,6 +73,15 @@
 				5259D9A52B6BF01600D86798 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5259D9AE2B6C0B6B00D86798 /* TutorialFiles */ = {
+			isa = PBXGroup;
+			children = (
+				5259D9AF2B6C0B8500D86798 /* MultiSelectListViewExample.swift */,
+				5259D9B12B6C0F8A00D86798 /* SingleSelectListViewExample.swift */,
+			);
+			path = TutorialFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,7 +156,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5259D9A12B6BF01300D86798 /* ContentView.swift in Sources */,
+				5259D9B02B6C0B8500D86798 /* MultiSelectListViewExample.swift in Sources */,
 				5259D99F2B6BF01300D86798 /* HotProspectsApp.swift in Sources */,
+				5259D9B22B6C0F8A00D86798 /* SingleSelectListViewExample.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
