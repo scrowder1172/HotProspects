@@ -15,6 +15,7 @@
 		5259D9B02B6C0B8500D86798 /* MultiSelectListViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5259D9AF2B6C0B8500D86798 /* MultiSelectListViewExample.swift */; };
 		5259D9B22B6C0F8A00D86798 /* SingleSelectListViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5259D9B12B6C0F8A00D86798 /* SingleSelectListViewExample.swift */; };
 		5259D9B42B6C12C600D86798 /* TabViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5259D9B32B6C12C600D86798 /* TabViewExample.swift */; };
+		5259D9B62B6C2FD800D86798 /* ResultTypeExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5259D9B52B6C2FD800D86798 /* ResultTypeExample.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		5259D9AF2B6C0B8500D86798 /* MultiSelectListViewExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiSelectListViewExample.swift; sourceTree = "<group>"; };
 		5259D9B12B6C0F8A00D86798 /* SingleSelectListViewExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleSelectListViewExample.swift; sourceTree = "<group>"; };
 		5259D9B32B6C12C600D86798 /* TabViewExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewExample.swift; sourceTree = "<group>"; };
+		5259D9B52B6C2FD800D86798 /* ResultTypeExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTypeExample.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				5259D9AF2B6C0B8500D86798 /* MultiSelectListViewExample.swift */,
 				5259D9B12B6C0F8A00D86798 /* SingleSelectListViewExample.swift */,
 				5259D9B32B6C12C600D86798 /* TabViewExample.swift */,
+				5259D9B52B6C2FD800D86798 /* ResultTypeExample.swift */,
 			);
 			path = TutorialFiles;
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 				5259D9A12B6BF01300D86798 /* ContentView.swift in Sources */,
 				5259D9B02B6C0B8500D86798 /* MultiSelectListViewExample.swift in Sources */,
 				5259D99F2B6BF01300D86798 /* HotProspectsApp.swift in Sources */,
+				5259D9B62B6C2FD800D86798 /* ResultTypeExample.swift in Sources */,
 				5259D9B22B6C0F8A00D86798 /* SingleSelectListViewExample.swift in Sources */,
 				5259D9B42B6C12C600D86798 /* TabViewExample.swift in Sources */,
 			);
