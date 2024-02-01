@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		520FFE0C2B6C447000B5DDBF /* ControlImageInterpolationExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520FFE0B2B6C447000B5DDBF /* ControlImageInterpolationExample.swift */; };
 		5259D99F2B6BF01300D86798 /* HotProspectsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5259D99E2B6BF01300D86798 /* HotProspectsApp.swift */; };
 		5259D9A12B6BF01300D86798 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5259D9A02B6BF01300D86798 /* ContentView.swift */; };
 		5259D9A32B6BF01600D86798 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5259D9A22B6BF01600D86798 /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		520FFE0B2B6C447000B5DDBF /* ControlImageInterpolationExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlImageInterpolationExample.swift; sourceTree = "<group>"; };
 		5259D99B2B6BF01300D86798 /* HotProspects.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotProspects.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5259D99E2B6BF01300D86798 /* HotProspectsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotProspectsApp.swift; sourceTree = "<group>"; };
 		5259D9A02B6BF01300D86798 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 				5259D9B12B6C0F8A00D86798 /* SingleSelectListViewExample.swift */,
 				5259D9B32B6C12C600D86798 /* TabViewExample.swift */,
 				5259D9B52B6C2FD800D86798 /* ResultTypeExample.swift */,
+				520FFE0B2B6C447000B5DDBF /* ControlImageInterpolationExample.swift */,
 			);
 			path = TutorialFiles;
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				520FFE0C2B6C447000B5DDBF /* ControlImageInterpolationExample.swift in Sources */,
 				5259D9A12B6BF01300D86798 /* ContentView.swift in Sources */,
 				5259D9B02B6C0B8500D86798 /* MultiSelectListViewExample.swift in Sources */,
 				5259D99F2B6BF01300D86798 /* HotProspectsApp.swift in Sources */,
