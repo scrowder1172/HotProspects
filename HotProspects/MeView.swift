@@ -10,8 +10,8 @@ import CoreImage.CIFilterBuiltins
 
 struct MeView: View {
     
-    @State private var name: String = "Anonymous"
-    @State private var emailAddress: String = "you@yoursite.com"
+    @AppStorage("name") private var name: String = "Anonymous"
+    @AppStorage("emailAddress") private var emailAddress: String = "you@yoursite.com"
     
     let context: CIContext = CIContext()
     let filter: CIQRCodeGenerator = CIFilter.qrCodeGenerator()
