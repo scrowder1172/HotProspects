@@ -21,6 +21,7 @@ struct AddProspect: View {
         Form {
             VStack(alignment: .leading) {
                 TextField("Name", text: $name)
+                    .textContentType(.name)
                 Text("Required")
                     .font(.caption)
                     .foregroundStyle(.red)
@@ -29,6 +30,7 @@ struct AddProspect: View {
             
             VStack(alignment: .leading) {
                 TextField("Email", text: $emailAddress)
+                    .textContentType(.emailAddress)
                 Text("Required")
                     .font(.caption)
                     .foregroundStyle(.red)
