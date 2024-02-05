@@ -17,6 +17,8 @@ struct ProspectsView: View {
     @Environment(\.modelContext) var modelContext
     @Query(sort: \Prospect.name) var prospects: [Prospect]
     
+    @State private var isShowingAddProspect: Bool = false
+    
     let filter: FilterType
     
     var title: String {
@@ -44,22 +46,52 @@ struct ProspectsView: View {
     
     var body: some View {
         NavigationStack {
-            List(prospects) { prospect in
-                VStack(alignment: .leading) {
-                    Text(prospect.name)
-                        .font(.headline)
-                    
-                    Text(prospect.emailAddress)
-                        .foregroundStyle(.secondary)
+            List {
+                ForEach(prospects) { prospect in
+                    VStack(alignment: .leading) {
+                        Text(prospect.name)
+                            .font(.headline)
+                        
+                        Text(prospect.emailAddress)
+                            .foregroundStyle(.secondary)
+                    }
+                    .swipeActions(edge: .leading) {
+                        Button("Contacted", systemImage: prospect.isContacted ? "questionmark.diamond" : "checkmark.circle"){
+                            prospect.isContacted.toggle()
+                        }
+                    }
                 }
+                .onDelete(perform: deleteProspect)
             }
             .navigationTitle(title)
             .toolbar {
-                Button("Add Prospect", systemImage: "qrcode.viewfinder") {
-                    let prospect: Prospect = Prospect(name: "Paul Hudson", emailAddress: "paul@hackingwithswift.com", isContacted: false)
-                    modelContext.insert(prospect)
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button("Add Prospect", systemImage: "qrcode.viewfinder") {
+                        let prospect: Prospect = Prospect(name: "Paul Hudson", emailAddress: "paul@hackingwithswift.com", isContacted: false)
+                        modelContext.insert(prospect)
+                    }
+                }
+                
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button("Add", systemImage: "plus") {
+                        isShowingAddProspect = true
+                    }
+                }
+                
+                ToolbarItem(placement: .topBarLeading) {
+                    EditButton()
                 }
             }
+            .sheet(isPresented: $isShowingAddProspect) {
+                AddProspect()
+            }
+        }
+    }
+    
+    func deleteProspect(at offsets: IndexSet) {
+        for offset in offsets {
+            let prospect = prospects[offset]
+            modelContext.delete(prospect)
         }
     }
 }

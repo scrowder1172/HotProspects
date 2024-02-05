@@ -16,6 +16,7 @@
 		5258B1D92B71933600B6B5A3 /* ProspectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5258B1D82B71933600B6B5A3 /* ProspectsView.swift */; };
 		5258B1DB2B71934B00B6B5A3 /* MeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5258B1DA2B71934B00B6B5A3 /* MeView.swift */; };
 		5258B1DD2B7196AB00B6B5A3 /* Prosepct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5258B1DC2B7196AB00B6B5A3 /* Prosepct.swift */; };
+		5258B1DF2B719E2100B6B5A3 /* AddProspect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5258B1DE2B719E2100B6B5A3 /* AddProspect.swift */; };
 		5259D99F2B6BF01300D86798 /* HotProspectsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5259D99E2B6BF01300D86798 /* HotProspectsApp.swift */; };
 		5259D9A12B6BF01300D86798 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5259D9A02B6BF01300D86798 /* ContentView.swift */; };
 		5259D9A32B6BF01600D86798 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5259D9A22B6BF01600D86798 /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 		5258B1D82B71933600B6B5A3 /* ProspectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProspectsView.swift; sourceTree = "<group>"; };
 		5258B1DA2B71934B00B6B5A3 /* MeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeView.swift; sourceTree = "<group>"; };
 		5258B1DC2B7196AB00B6B5A3 /* Prosepct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prosepct.swift; sourceTree = "<group>"; };
+		5258B1DE2B719E2100B6B5A3 /* AddProspect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProspect.swift; sourceTree = "<group>"; };
 		5259D99B2B6BF01300D86798 /* HotProspects.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotProspects.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5259D99E2B6BF01300D86798 /* HotProspectsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotProspectsApp.swift; sourceTree = "<group>"; };
 		5259D9A02B6BF01300D86798 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				5259D9A02B6BF01300D86798 /* ContentView.swift */,
 				5258B1D82B71933600B6B5A3 /* ProspectsView.swift */,
 				5258B1DC2B7196AB00B6B5A3 /* Prosepct.swift */,
+				5258B1DE2B719E2100B6B5A3 /* AddProspect.swift */,
 				5258B1DA2B71934B00B6B5A3 /* MeView.swift */,
 				5259D9AE2B6C0B6B00D86798 /* TutorialFiles */,
 				5259D9AC2B6BF19D00D86798 /* Launch Screen.storyboard */,
@@ -200,6 +203,7 @@
 				5259D9B02B6C0B8500D86798 /* MultiSelectListViewExample.swift in Sources */,
 				5258B1D02B71700100B6B5A3 /* CustomRowSwipeActionExample.swift in Sources */,
 				5258B1D22B717F7400B6B5A3 /* LocalNotificationExample.swift in Sources */,
+				5258B1DF2B719E2100B6B5A3 /* AddProspect.swift in Sources */,
 				5259D99F2B6BF01300D86798 /* HotProspectsApp.swift in Sources */,
 				5258B1D42B718CD000B6B5A3 /* SwiftPackageDependenciesExample.swift in Sources */,
 				5259D9B62B6C2FD800D86798 /* ResultTypeExample.swift in Sources */,
