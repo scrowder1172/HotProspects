@@ -31,6 +31,7 @@ struct AddProspect: View {
             VStack(alignment: .leading) {
                 TextField("Email", text: $emailAddress)
                     .textContentType(.emailAddress)
+                    .keyboardType(.emailAddress)
                 Text("Required")
                     .font(.caption)
                     .foregroundStyle(.red)
