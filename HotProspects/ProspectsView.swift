@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SwiftData
+import CodeScanner
 
 struct ProspectsView: View {
     
@@ -18,6 +19,7 @@ struct ProspectsView: View {
     @Query(sort: \Prospect.name) var prospects: [Prospect]
     
     @State private var isShowingAddProspect: Bool = false
+    @State private var isShowingScanner: Bool = false
     
     let filter: FilterType
     
@@ -67,8 +69,7 @@ struct ProspectsView: View {
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("Add Prospect", systemImage: "qrcode.viewfinder") {
-                        let prospect: Prospect = Prospect(name: "Paul Hudson", emailAddress: "paul@hackingwithswift.com", isContacted: false)
-                        modelContext.insert(prospect)
+                        isShowingScanner = true
                     }
                 }
                 
@@ -85,6 +86,10 @@ struct ProspectsView: View {
             .sheet(isPresented: $isShowingAddProspect) {
                 AddProspect()
             }
+            .sheet(isPresented: $isShowingScanner) {
+//                CodeScannerView(codeTypes: [.qr, .pdf417, .ean8, .ean13, .upce], showViewfinder: true, completion: handleScan)
+                QRScannerView()
+            }
         }
     }
     
@@ -92,6 +97,20 @@ struct ProspectsView: View {
         for offset in offsets {
             let prospect = prospects[offset]
             modelContext.delete(prospect)
+        }
+    }
+    
+    func handleScan(result: Result<ScanResult, ScanError>) {
+        isShowingScanner = false
+        switch result {
+        case .success(let result):
+            let details = result.string.components(separatedBy: "\n")
+            guard details.count == 2 else { return }
+            
+            let person: Prospect = Prospect(name: details[0], emailAddress: details[1], isContacted: false)
+            modelContext.insert(person)
+        case .failure(let error):
+            print("Scanning error: \(error.localizedDescription)")
         }
     }
 }
