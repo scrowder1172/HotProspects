@@ -14,9 +14,15 @@ struct SingleSelectListViewExample: View {
     @State private var userSelection: String?
     
     var body: some View {
-        List(users, id: \.self, selection: $userSelection) { user in
-            Text(user)
+        NavigationStack {
+            List(selection: $userSelection) {
+                ForEach(users, id: \.self) {user in
+                    Text(user)
+                }
+            }
+            .navigationTitle("Users")
         }
+        
         
         if let userSelection {
             Text("You have selected: ") +

@@ -19,6 +19,8 @@
 		5258B1DF2B719E2100B6B5A3 /* AddProspect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5258B1DE2B719E2100B6B5A3 /* AddProspect.swift */; };
 		5258B1FC2B72D0B600B6B5A3 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 5258B1FB2B72D0B600B6B5A3 /* CodeScanner */; };
 		5258B1FF2B72DEDB00B6B5A3 /* QRScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5258B1FE2B72DEDB00B6B5A3 /* QRScannerView.swift */; };
+		5258B2212B72F21500B6B5A3 /* SelectedProspectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5258B2202B72F21500B6B5A3 /* SelectedProspectView.swift */; };
+		5258B2232B7332EE00B6B5A3 /* ListVIewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5258B2222B7332EE00B6B5A3 /* ListVIewExample.swift */; };
 		5259D99F2B6BF01300D86798 /* HotProspectsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5259D99E2B6BF01300D86798 /* HotProspectsApp.swift */; };
 		5259D9A12B6BF01300D86798 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5259D9A02B6BF01300D86798 /* ContentView.swift */; };
 		5259D9A32B6BF01600D86798 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5259D9A22B6BF01600D86798 /* Assets.xcassets */; };
@@ -42,6 +44,8 @@
 		5258B1DE2B719E2100B6B5A3 /* AddProspect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProspect.swift; sourceTree = "<group>"; };
 		5258B1FD2B72D2DB00B6B5A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		5258B1FE2B72DEDB00B6B5A3 /* QRScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerView.swift; sourceTree = "<group>"; };
+		5258B2202B72F21500B6B5A3 /* SelectedProspectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedProspectView.swift; sourceTree = "<group>"; };
+		5258B2222B7332EE00B6B5A3 /* ListVIewExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVIewExample.swift; sourceTree = "<group>"; };
 		5259D99B2B6BF01300D86798 /* HotProspects.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotProspects.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5259D99E2B6BF01300D86798 /* HotProspectsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotProspectsApp.swift; sourceTree = "<group>"; };
 		5259D9A02B6BF01300D86798 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -92,6 +96,7 @@
 				5258B1D82B71933600B6B5A3 /* ProspectsView.swift */,
 				5258B1DC2B7196AB00B6B5A3 /* Prosepct.swift */,
 				5258B1DE2B719E2100B6B5A3 /* AddProspect.swift */,
+				5258B2202B72F21500B6B5A3 /* SelectedProspectView.swift */,
 				5258B1DA2B71934B00B6B5A3 /* MeView.swift */,
 				5258B1FE2B72DEDB00B6B5A3 /* QRScannerView.swift */,
 				5259D9AE2B6C0B6B00D86798 /* TutorialFiles */,
@@ -113,6 +118,7 @@
 		5259D9AE2B6C0B6B00D86798 /* TutorialFiles */ = {
 			isa = PBXGroup;
 			children = (
+				5258B2222B7332EE00B6B5A3 /* ListVIewExample.swift */,
 				5259D9AF2B6C0B8500D86798 /* MultiSelectListViewExample.swift */,
 				5259D9B12B6C0F8A00D86798 /* SingleSelectListViewExample.swift */,
 				5259D9B32B6C12C600D86798 /* TabViewExample.swift */,
@@ -206,11 +212,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				5258B1D92B71933600B6B5A3 /* ProspectsView.swift in Sources */,
+				5258B2232B7332EE00B6B5A3 /* ListVIewExample.swift in Sources */,
 				520FFE0C2B6C447000B5DDBF /* ControlImageInterpolationExample.swift in Sources */,
 				520FFE0E2B6C484D00B5DDBF /* ContextMenuExample.swift in Sources */,
 				5259D9A12B6BF01300D86798 /* ContentView.swift in Sources */,
 				5259D9B02B6C0B8500D86798 /* MultiSelectListViewExample.swift in Sources */,
 				5258B1D02B71700100B6B5A3 /* CustomRowSwipeActionExample.swift in Sources */,
+				5258B2212B72F21500B6B5A3 /* SelectedProspectView.swift in Sources */,
 				5258B1FF2B72DEDB00B6B5A3 /* QRScannerView.swift in Sources */,
 				5258B1D22B717F7400B6B5A3 /* LocalNotificationExample.swift in Sources */,
 				5258B1DF2B719E2100B6B5A3 /* AddProspect.swift in Sources */,

@@ -18,4 +18,8 @@ final class Prospect {
         self.emailAddress = emailAddress
         self.isContacted = isContacted
     }
+    
+    #if DEBUG
+    static let example: Prospect = Prospect(name: "Sample", emailAddress: "sample@email.com", isContacted: false)
+    #endif
 }
