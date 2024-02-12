@@ -22,6 +22,7 @@ struct AddProspect: View {
             VStack(alignment: .leading) {
                 TextField("Name", text: $name)
                     .textContentType(.name)
+                    .textInputAutocapitalization(.words)
                 Text("Required")
                     .font(.caption)
                     .foregroundStyle(.red)
@@ -32,6 +33,8 @@ struct AddProspect: View {
                 TextField("Email", text: $emailAddress)
                     .textContentType(.emailAddress)
                     .keyboardType(.emailAddress)
+                    .autocorrectionDisabled()
+                    .textInputAutocapitalization(.never)
                 Text("Required")
                     .font(.caption)
                     .foregroundStyle(.red)
