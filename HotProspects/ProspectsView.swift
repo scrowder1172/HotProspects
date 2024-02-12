@@ -53,7 +53,7 @@ struct ProspectsView: View {
     var body: some View {
         NavigationStack {
             List(selection: $userSelection) {
-                ForEach(prospects, id: \.self) { prospect in
+                ForEach(prospects) { prospect in
                     HStack {
                         VStack(alignment: .leading) {
                             Text(prospect.name)
