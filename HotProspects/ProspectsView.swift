@@ -25,6 +25,8 @@ struct ProspectsView: View {
     @State private var userSelection: Prospect?
     @State private var listSelection: String?
     
+    @State private var selectedProspects: Set<Prospect> = Set<Prospect>()
+    
     let filter: FilterType
     
     var title: String {
@@ -52,36 +54,39 @@ struct ProspectsView: View {
     
     var body: some View {
         NavigationStack {
-            List(selection: $userSelection) {
-                ForEach(prospects) { prospect in
-                    HStack {
-                        VStack(alignment: .leading) {
-                            Text(prospect.name)
-                                .font(.headline)
-                            
-                            Text(prospect.emailAddress)
-                                .foregroundStyle(.secondary)
-                        }
-                        Spacer()
-                        Image(systemName: prospect.isContacted ? "checkmark.circle" : "questionmark.diamond")
-                            .resizable()
-                            .frame(width: 30, height: 30)
-                            .foregroundStyle(prospect.isContacted ? .green : .blue)
-                    }
-                    .swipeActions(edge: .leading) {
-                        Button("Contacted", systemImage: prospect.isContacted ? "questionmark.diamond" : "checkmark.circle"){
-                            prospect.isContacted.toggle()
-                        }
-                        .tint(prospect.isContacted ? .blue : .green)
+            List(prospects, selection: $selectedProspects) { prospect in
+                HStack {
+                    VStack(alignment: .leading) {
+                        Text(prospect.name)
+                            .font(.headline)
                         
-                        Button("Edit Prospect", systemImage: "pencil.and.list.clipboard") {
-                            userSelection = prospect
-                            isShowingSelectedProspect = true
-                        }
-                        .tint(.orange)
+                        Text(prospect.emailAddress)
+                            .foregroundStyle(.secondary)
+                    }
+                    Spacer()
+                    Image(systemName: prospect.isContacted ? "checkmark.circle" : "questionmark.diamond")
+                        .resizable()
+                        .frame(width: 30, height: 30)
+                        .foregroundStyle(prospect.isContacted ? .green : .blue)
+                }
+                .tag(prospect)
+                .swipeActions(edge: .leading) {
+                    Button("Contacted", systemImage: prospect.isContacted ? "questionmark.diamond" : "checkmark.circle"){
+                        prospect.isContacted.toggle()
+                    }
+                    .tint(prospect.isContacted ? .blue : .green)
+                    
+                    Button("Edit Prospect", systemImage: "pencil.and.list.clipboard") {
+                        userSelection = prospect
+                        isShowingSelectedProspect = true
+                    }
+                    .tint(.orange)
+                }
+                .swipeActions(edge: .trailing) {
+                    Button("Delete", systemImage: "trash", role: .destructive) {
+                        modelContext.delete(prospect)
                     }
                 }
-                .onDelete(perform: deleteProspect)
             }
             .navigationTitle(title)
             .toolbar {
@@ -100,6 +105,12 @@ struct ProspectsView: View {
                 ToolbarItem(placement: .topBarLeading) {
                     EditButton()
                 }
+                
+                if selectedProspects.isEmpty == false {
+                    ToolbarItem(placement: .bottomBar) {
+                        Button("Delete Selected", action: delete)
+                    }
+                }
             }
             .sheet(isPresented: $isShowingAddProspect) {
                 AddProspect()
@@ -111,7 +122,6 @@ struct ProspectsView: View {
                 if let userSelection {
                     SelectedProspectView(prospect: userSelection)
                 }
-                
             }
         }
     }
@@ -119,6 +129,12 @@ struct ProspectsView: View {
     func deleteProspect(at offsets: IndexSet) {
         for offset in offsets {
             let prospect = prospects[offset]
+            modelContext.delete(prospect)
+        }
+    }
+    
+    func delete() {
+        for prospect in selectedProspects {
             modelContext.delete(prospect)
         }
     }
