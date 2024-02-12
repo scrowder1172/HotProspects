@@ -13,6 +13,8 @@ struct MeView: View {
     @AppStorage("name") private var name: String = "Anonymous"
     @AppStorage("emailAddress") private var emailAddress: String = "you@yoursite.com"
     
+    @State private var qrCode: UIImage = UIImage()
+    
     let context: CIContext = CIContext()
     let filter: CIQRCodeGenerator = CIFilter.qrCodeGenerator()
     
@@ -28,14 +30,30 @@ struct MeView: View {
                     .keyboardType(.emailAddress)
                     .font(.title)
                 
-                Image(uiImage: generateQRCode(from: "\(name)\n\(emailAddress)"))
+                Image(uiImage: qrCode)
                     .interpolation(.none)
                     .resizable()
                     .scaledToFit()
                     .frame(width: 200, height: 200)
+                    .contextMenu {
+                        ShareLink(item: Image(uiImage: qrCode), preview: SharePreview("My QR Code", image: Image(uiImage: qrCode)))
+                    }
+            }
+            .onAppear {
+                updateCode()
+            }
+            .onChange(of: name) {
+                updateCode()
+            }
+            .onChange(of: emailAddress) {
+                updateCode()
             }
             .navigationTitle("Your QR Code")
         }
+    }
+    
+    func updateCode() {
+        qrCode = generateQRCode(from: "\(name)\n\(emailAddress)")
     }
     
     func generateQRCode(from string: String) -> UIImage {
