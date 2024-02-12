@@ -5,9 +5,10 @@
 //  Created by SCOTT CROWDER on 2/5/24.
 //
 
-import SwiftUI
-import SwiftData
 import CodeScanner
+import SwiftData
+import SwiftUI
+import UserNotifications
 
 struct ProspectsView: View {
     
@@ -81,6 +82,13 @@ struct ProspectsView: View {
                         isShowingSelectedProspect = true
                     }
                     .tint(.orange)
+                    
+                    if prospect.isContacted == false {
+                        Button("Remind Me", systemImage: "bell") {
+                            addNotification(for: prospect, repeatNotification: true, testNotification: false)
+                        }
+                        .tint(.yellow)
+                    }
                 }
                 .swipeActions(edge: .trailing) {
                     Button("Delete", systemImage: "trash", role: .destructive) {
@@ -150,6 +158,49 @@ struct ProspectsView: View {
             modelContext.insert(person)
         case .failure(let error):
             print("Scanning error: \(error.localizedDescription)")
+        }
+    }
+    
+    func addNotification(for prospect: Prospect, repeatNotification: Bool = true, testNotification: Bool = false) {
+        let center: UNUserNotificationCenter = UNUserNotificationCenter.current()
+        
+        
+        let addRequest = {
+            let content: UNMutableNotificationContent = UNMutableNotificationContent()
+            content.title = "Contact \(prospect.name)"
+            content.subtitle = prospect.emailAddress
+            content.sound = UNNotificationSound.default
+            
+            if testNotification {
+                let trigger: UNTimeIntervalNotificationTrigger
+                trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: repeatNotification)
+                let request: UNNotificationRequest = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+                center.add(request)
+            } else {
+                var dateComponents: DateComponents = DateComponents()
+                dateComponents.hour = 16
+                let trigger: UNCalendarNotificationTrigger
+                trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: repeatNotification)
+                let request: UNNotificationRequest = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+                center.add(request)
+            }
+        }
+        
+        center.getNotificationSettings { settings in
+            print("Alerts Setting: \(settings.alertSetting)")
+            print("Badge Setting: \(settings.badgeSetting)")
+            print("Sound Setting: \(settings.soundSetting)")
+            if settings.authorizationStatus == .authorized {
+                addRequest()
+            } else {
+                center.requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
+                    if success {
+                        addRequest()
+                    } else if let error {
+                        print(error.localizedDescription)
+                    }
+                }
+            }
         }
     }
 }
