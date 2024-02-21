@@ -21,10 +21,6 @@ struct ProspectsView: View {
     
     @State private var isShowingAddProspect: Bool = false
     @State private var isShowingScanner: Bool = false
-    @State private var isShowingSelectedProspect: Bool = false
-    
-    @State private var userSelection: Prospect?
-    @State private var listSelection: String?
     
     @State private var selectedProspects: Set<Prospect> = Set<Prospect>()
     
@@ -56,19 +52,23 @@ struct ProspectsView: View {
     var body: some View {
         NavigationStack {
             List(prospects, selection: $selectedProspects) { prospect in
-                HStack {
-                    VStack(alignment: .leading) {
-                        Text(prospect.name)
-                            .font(.headline)
-                        
-                        Text(prospect.emailAddress)
-                            .foregroundStyle(.secondary)
+                NavigationLink{
+                    EditProspectView(prospect: prospect)
+                } label: {
+                    HStack {
+                        VStack(alignment: .leading) {
+                            Text(prospect.name)
+                                .font(.headline)
+                            
+                            Text(prospect.emailAddress)
+                                .foregroundStyle(.secondary)
+                        }
+                        Spacer()
+                        Image(systemName: prospect.isContacted ? "checkmark.circle" : "questionmark.diamond")
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                            .foregroundStyle(prospect.isContacted ? .green : .blue)
                     }
-                    Spacer()
-                    Image(systemName: prospect.isContacted ? "checkmark.circle" : "questionmark.diamond")
-                        .resizable()
-                        .frame(width: 30, height: 30)
-                        .foregroundStyle(prospect.isContacted ? .green : .blue)
                 }
                 .tag(prospect)
                 .swipeActions(edge: .leading) {
@@ -76,12 +76,6 @@ struct ProspectsView: View {
                         prospect.isContacted.toggle()
                     }
                     .tint(prospect.isContacted ? .blue : .green)
-                    
-                    Button("Edit Prospect", systemImage: "pencil.and.list.clipboard") {
-                        userSelection = prospect
-                        isShowingSelectedProspect = true
-                    }
-                    .tint(.orange)
                     
                     if prospect.isContacted == false {
                         Button("Remind Me", systemImage: "bell") {
@@ -126,10 +120,8 @@ struct ProspectsView: View {
             .sheet(isPresented: $isShowingScanner) {
                 QRScannerView()
             }
-            .sheet(isPresented: $isShowingSelectedProspect) {
-                if let userSelection {
-                    SelectedProspectView(prospect: userSelection)
-                }
+            .onAppear {
+                selectedProspects = []
             }
         }
     }

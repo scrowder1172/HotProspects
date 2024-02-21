@@ -30,6 +30,7 @@
 		5259D9B22B6C0F8A00D86798 /* SingleSelectListViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5259D9B12B6C0F8A00D86798 /* SingleSelectListViewExample.swift */; };
 		5259D9B42B6C12C600D86798 /* TabViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5259D9B32B6C12C600D86798 /* TabViewExample.swift */; };
 		5259D9B62B6C2FD800D86798 /* ResultTypeExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5259D9B52B6C2FD800D86798 /* ResultTypeExample.swift */; };
+		52DB95862B86A40300E92654 /* EditProspectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DB95852B86A40300E92654 /* EditProspectView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		5259D9B12B6C0F8A00D86798 /* SingleSelectListViewExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleSelectListViewExample.swift; sourceTree = "<group>"; };
 		5259D9B32B6C12C600D86798 /* TabViewExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewExample.swift; sourceTree = "<group>"; };
 		5259D9B52B6C2FD800D86798 /* ResultTypeExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTypeExample.swift; sourceTree = "<group>"; };
+		52DB95852B86A40300E92654 /* EditProspectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProspectView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 				5258B1DC2B7196AB00B6B5A3 /* Prosepct.swift */,
 				5258B1DE2B719E2100B6B5A3 /* AddProspect.swift */,
 				5258B2202B72F21500B6B5A3 /* SelectedProspectView.swift */,
+				52DB95852B86A40300E92654 /* EditProspectView.swift */,
 				5258B1DA2B71934B00B6B5A3 /* MeView.swift */,
 				5258B1FE2B72DEDB00B6B5A3 /* QRScannerView.swift */,
 				5259D9AE2B6C0B6B00D86798 /* TutorialFiles */,
@@ -214,6 +217,7 @@
 				5258B1D92B71933600B6B5A3 /* ProspectsView.swift in Sources */,
 				5258B2232B7332EE00B6B5A3 /* ListVIewExample.swift in Sources */,
 				520FFE0C2B6C447000B5DDBF /* ControlImageInterpolationExample.swift in Sources */,
+				52DB95862B86A40300E92654 /* EditProspectView.swift in Sources */,
 				520FFE0E2B6C484D00B5DDBF /* ContextMenuExample.swift in Sources */,
 				5259D9A12B6BF01300D86798 /* ContentView.swift in Sources */,
 				5259D9B02B6C0B8500D86798 /* MultiSelectListViewExample.swift in Sources */,
