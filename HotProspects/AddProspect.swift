@@ -49,6 +49,7 @@ struct AddProspect: View {
                     dismiss()
                 }
             }
+            .disabled(name.isEmpty || emailAddress.isEmpty)
         }
     }
 }
