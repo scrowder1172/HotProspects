@@ -37,7 +37,7 @@ struct ProspectsView: View {
         }
     }
     
-    init(filter: FilterType) {
+    init(filter: FilterType, sort: SortDescriptor<Prospect>) {
         self.filter = filter
         
         if filter != .none {
@@ -45,84 +45,84 @@ struct ProspectsView: View {
             
             _prospects = Query(filter: #Predicate{
                 $0.isContacted == showContactedOnly
-            }, sort: [SortDescriptor(\Prospect.name)])
+            }, sort: [sort])
+        } else {
+            _prospects = Query(sort: [sort])
         }
     }
     
     var body: some View {
-        NavigationStack {
-            List(prospects, selection: $selectedProspects) { prospect in
-                NavigationLink{
-                    EditProspectView(prospect: prospect)
-                } label: {
-                    HStack {
-                        VStack(alignment: .leading) {
-                            Text(prospect.name)
-                                .font(.headline)
-                            
-                            Text(prospect.emailAddress)
-                                .foregroundStyle(.secondary)
-                        }
-                        Spacer()
-                        Image(systemName: prospect.isContacted ? "checkmark.circle" : "questionmark.diamond")
-                            .resizable()
-                            .frame(width: 30, height: 30)
-                            .foregroundStyle(prospect.isContacted ? .green : .blue)
+        List(prospects, selection: $selectedProspects) { prospect in
+            NavigationLink{
+                EditProspectView(prospect: prospect)
+            } label: {
+                HStack {
+                    VStack(alignment: .leading) {
+                        Text(prospect.name)
+                            .font(.headline)
+                        
+                        Text(prospect.emailAddress)
+                            .foregroundStyle(.secondary)
                     }
-                }
-                .tag(prospect)
-                .swipeActions(edge: .leading) {
-                    Button("Contacted", systemImage: prospect.isContacted ? "questionmark.diamond" : "checkmark.circle"){
-                        prospect.isContacted.toggle()
-                    }
-                    .tint(prospect.isContacted ? .blue : .green)
-                    
-                    if prospect.isContacted == false {
-                        Button("Remind Me", systemImage: "bell") {
-                            addNotification(for: prospect, repeatNotification: true, testNotification: false)
-                        }
-                        .tint(.yellow)
-                    }
-                }
-                .swipeActions(edge: .trailing) {
-                    Button("Delete", systemImage: "trash", role: .destructive) {
-                        modelContext.delete(prospect)
-                    }
+                    Spacer()
+                    Image(systemName: prospect.isContacted ? "checkmark.circle" : "questionmark.diamond")
+                        .resizable()
+                        .frame(width: 30, height: 30)
+                        .foregroundStyle(prospect.isContacted ? .green : .blue)
                 }
             }
-            .navigationTitle(title)
-            .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
-                    Button("Add Prospect", systemImage: "qrcode.viewfinder") {
-                        isShowingScanner = true
-                    }
+            .tag(prospect)
+            .swipeActions(edge: .leading) {
+                Button("Contacted", systemImage: prospect.isContacted ? "questionmark.diamond" : "checkmark.circle"){
+                    prospect.isContacted.toggle()
                 }
+                .tint(prospect.isContacted ? .blue : .green)
                 
-                ToolbarItem(placement: .topBarTrailing) {
-                    Button("Add", systemImage: "plus") {
-                        isShowingAddProspect = true
+                if prospect.isContacted == false {
+                    Button("Remind Me", systemImage: "bell") {
+                        addNotification(for: prospect, repeatNotification: true, testNotification: false)
                     }
-                }
-                
-                ToolbarItem(placement: .topBarLeading) {
-                    EditButton()
-                }
-                
-                if selectedProspects.isEmpty == false {
-                    ToolbarItem(placement: .bottomBar) {
-                        Button("Delete Selected", action: delete)
-                    }
+                    .tint(.yellow)
                 }
             }
-            .sheet(isPresented: $isShowingAddProspect) {
-                AddProspect()
+            .swipeActions(edge: .trailing) {
+                Button("Delete", systemImage: "trash", role: .destructive) {
+                    modelContext.delete(prospect)
+                }
             }
-            .sheet(isPresented: $isShowingScanner) {
-                QRScannerView()
+        }
+        .navigationTitle(title)
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Button("Add Prospect", systemImage: "qrcode.viewfinder") {
+                    isShowingScanner = true
+                }
             }
-            .onAppear {
-                selectedProspects = []
+            
+            ToolbarItem(placement: .topBarTrailing) {
+                Button("Add", systemImage: "plus") {
+                    isShowingAddProspect = true
+                }
             }
+            
+            ToolbarItem(placement: .topBarLeading) {
+                EditButton()
+            }
+            
+            if selectedProspects.isEmpty == false {
+                ToolbarItem(placement: .bottomBar) {
+                    Button("Delete Selected", action: delete)
+                }
+            }
+        }
+        .sheet(isPresented: $isShowingAddProspect) {
+            AddProspect()
+        }
+        .sheet(isPresented: $isShowingScanner) {
+            QRScannerView()
+        }
+        .onAppear {
+            selectedProspects = []
         }
     }
     
@@ -198,6 +198,6 @@ struct ProspectsView: View {
 }
 
 #Preview {
-    ProspectsView(filter: .none)
+    ProspectsView(filter: .none, sort: SortDescriptor(\Prospect.name))
         .modelContainer(for: Prospect.self)
 }

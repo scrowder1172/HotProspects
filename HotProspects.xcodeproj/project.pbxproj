@@ -15,7 +15,7 @@
 		5258B1D72B718E4500B6B5A3 /* SamplePackage in Frameworks */ = {isa = PBXBuildFile; productRef = 5258B1D62B718E4500B6B5A3 /* SamplePackage */; };
 		5258B1D92B71933600B6B5A3 /* ProspectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5258B1D82B71933600B6B5A3 /* ProspectsView.swift */; };
 		5258B1DB2B71934B00B6B5A3 /* MeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5258B1DA2B71934B00B6B5A3 /* MeView.swift */; };
-		5258B1DD2B7196AB00B6B5A3 /* Prosepct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5258B1DC2B7196AB00B6B5A3 /* Prosepct.swift */; };
+		5258B1DD2B7196AB00B6B5A3 /* Prospect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5258B1DC2B7196AB00B6B5A3 /* Prospect.swift */; };
 		5258B1DF2B719E2100B6B5A3 /* AddProspect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5258B1DE2B719E2100B6B5A3 /* AddProspect.swift */; };
 		5258B1FC2B72D0B600B6B5A3 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 5258B1FB2B72D0B600B6B5A3 /* CodeScanner */; };
 		5258B1FF2B72DEDB00B6B5A3 /* QRScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5258B1FE2B72DEDB00B6B5A3 /* QRScannerView.swift */; };
@@ -31,6 +31,7 @@
 		5259D9B42B6C12C600D86798 /* TabViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5259D9B32B6C12C600D86798 /* TabViewExample.swift */; };
 		5259D9B62B6C2FD800D86798 /* ResultTypeExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5259D9B52B6C2FD800D86798 /* ResultTypeExample.swift */; };
 		52DB95862B86A40300E92654 /* EditProspectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DB95852B86A40300E92654 /* EditProspectView.swift */; };
+		52DB958A2B86B21700E92654 /* SortableProspectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DB95892B86B21700E92654 /* SortableProspectsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,7 +42,7 @@
 		5258B1D32B718CD000B6B5A3 /* SwiftPackageDependenciesExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftPackageDependenciesExample.swift; sourceTree = "<group>"; };
 		5258B1D82B71933600B6B5A3 /* ProspectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProspectsView.swift; sourceTree = "<group>"; };
 		5258B1DA2B71934B00B6B5A3 /* MeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeView.swift; sourceTree = "<group>"; };
-		5258B1DC2B7196AB00B6B5A3 /* Prosepct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prosepct.swift; sourceTree = "<group>"; };
+		5258B1DC2B7196AB00B6B5A3 /* Prospect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prospect.swift; sourceTree = "<group>"; };
 		5258B1DE2B719E2100B6B5A3 /* AddProspect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProspect.swift; sourceTree = "<group>"; };
 		5258B1FD2B72D2DB00B6B5A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		5258B1FE2B72DEDB00B6B5A3 /* QRScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerView.swift; sourceTree = "<group>"; };
@@ -58,6 +59,7 @@
 		5259D9B32B6C12C600D86798 /* TabViewExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewExample.swift; sourceTree = "<group>"; };
 		5259D9B52B6C2FD800D86798 /* ResultTypeExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTypeExample.swift; sourceTree = "<group>"; };
 		52DB95852B86A40300E92654 /* EditProspectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProspectView.swift; sourceTree = "<group>"; };
+		52DB95892B86B21700E92654 /* SortableProspectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortableProspectsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +98,8 @@
 				5259D99E2B6BF01300D86798 /* HotProspectsApp.swift */,
 				5259D9A02B6BF01300D86798 /* ContentView.swift */,
 				5258B1D82B71933600B6B5A3 /* ProspectsView.swift */,
-				5258B1DC2B7196AB00B6B5A3 /* Prosepct.swift */,
+				52DB95892B86B21700E92654 /* SortableProspectsView.swift */,
+				5258B1DC2B7196AB00B6B5A3 /* Prospect.swift */,
 				5258B1DE2B719E2100B6B5A3 /* AddProspect.swift */,
 				5258B2202B72F21500B6B5A3 /* SelectedProspectView.swift */,
 				52DB95852B86A40300E92654 /* EditProspectView.swift */,
@@ -230,7 +233,8 @@
 				5258B1D42B718CD000B6B5A3 /* SwiftPackageDependenciesExample.swift in Sources */,
 				5259D9B62B6C2FD800D86798 /* ResultTypeExample.swift in Sources */,
 				5259D9B22B6C0F8A00D86798 /* SingleSelectListViewExample.swift in Sources */,
-				5258B1DD2B7196AB00B6B5A3 /* Prosepct.swift in Sources */,
+				52DB958A2B86B21700E92654 /* SortableProspectsView.swift in Sources */,
+				5258B1DD2B7196AB00B6B5A3 /* Prospect.swift in Sources */,
 				5259D9B42B6C12C600D86798 /* TabViewExample.swift in Sources */,
 				5258B1DB2B71934B00B6B5A3 /* MeView.swift in Sources */,
 			);
