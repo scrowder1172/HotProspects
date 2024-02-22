@@ -37,17 +37,25 @@ struct ProspectsView: View {
         }
     }
     
-    init(filter: FilterType, sort: SortDescriptor<Prospect>) {
+    init(filter: FilterType, sort: [SortDescriptor<Prospect>], searchText: String = "") {
         self.filter = filter
         
         if filter != .none {
             let showContactedOnly: Bool = filter == .contacted
             
             _prospects = Query(filter: #Predicate{
-                $0.isContacted == showContactedOnly
-            }, sort: [sort])
+                if searchText.isEmpty {
+                    $0.isContacted == showContactedOnly
+                } else {
+                    $0.isContacted == showContactedOnly &&
+                    $0.name.localizedStandardContains(searchText)
+                }
+            }, sort: sort)
         } else {
-            _prospects = Query(sort: [sort])
+            _prospects = Query(filter: #Predicate{
+                $0.name.localizedStandardContains(searchText) ||
+                searchText.isEmpty
+            }, sort: sort)
         }
     }
     
@@ -198,6 +206,6 @@ struct ProspectsView: View {
 }
 
 #Preview {
-    ProspectsView(filter: .none, sort: SortDescriptor(\Prospect.name))
+    ProspectsView(filter: .none, sort: [SortDescriptor(\Prospect.name)])
         .modelContainer(for: Prospect.self)
 }
